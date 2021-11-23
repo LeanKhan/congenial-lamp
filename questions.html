@@ -65,11 +65,13 @@
     <div id="qs">
       <ol>
         {% for q in questions %}
-        <b> q["q"] </b>
-        <details>
-          <summary>Answer</summary>
-            <p> q["ans"] </p>
-        </details>
+          <li>
+              <b> {{ q["q"] }} </b>
+                <details>
+                  <summary>Answer</summary>
+                    <p> {{ q["ans"] }} </p>
+                </details>
+          </li>
         {% endfor %}
       </ol>
     </div>
