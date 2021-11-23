@@ -55,20 +55,23 @@
     -->
     
     <h3>{{ page.title }}</h3>
-    
-    <h5>Formed {{ len(questions) }} questions </h5>
+    <a href="{{ page.url }}" target="_blank" > View Original </a>
+    <h5>Formed {{ questions | length }} questions </h5>
 
     <h4 style="font-weight: bold;color: orange;text-align: center">
       So you think you know Nigerian History?
     </h4>
 
-    <form id="form">
-      <label for="article">Article title</label>
-      <input name="article" type="text" />
-
-      <input type="submit" />
-    </form>
-
-    <div id="qs"></div>
+    <div id="qs">
+      <ol>
+        {% for q in questions %}
+        <b> q["q"] </b>
+        <details>
+          <summary>Answer</summary>
+            <p> q["ans"] </p>
+        </details>
+        {% endfor %}
+      </ol>
+    </div>
   </body>
 </html>
